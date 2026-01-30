@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>LASH CANDY - Tan Dulces Como Tu Mirada</title>
+
+    <style>
+        :root {
+            --light-pink: #FFB6C1;
+            --lilac:   #D7BDE2;
+            --strong-lilac: #C8A2C8;
+            --hot-pink: #FF69B4;
+            --white: #FFFFFF;
+            --text: #2d1b38;
+            --shadow: 0 4px 15px rgba(0,0,0,0.08);
+        }
+
+        * { box-sizing: border-box; margin:0; padding:0; }
+
+        body {
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: #fff8fb;
+            color: var(--text);
+            line-height: 1.6;
+        }
+
+        header {
+            background: var(--light-pink);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 3px 15px rgba(0,0,0,0.08);
+        }
+
+        nav {
+            max-width: 1300px;
+            margin: 0 auto;
+            padding: 1rem 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .lash-icon {
+            width: 50px;
+            height: 35px;
+        }
+
+        .logo-text {
+            font-size: 2.1rem;
+            font-weight: 800;
+            color: var(--strong-lilac);
+        }
+
+        .logo-text span { color: var(--hot-pink); }
+
+        .menu {
+            display: flex;
+            gap: 2.2rem;
+            list-style: none;
+        }
+
+        .menu a {
+            text-decoration: none;
+            color: var(--text);
+            font-weight: 600;
+            transition: all 0.25s;
+        }
+
+        .menu a:hover { color: var(--hot-pink); transform: translateY(-2px); }
+
+        section {
+            max-width: 1300px;
+            margin: 0 auto;
+            padding: 4.5rem 1.5rem;
+        }
+
+        h1, h2 {
+            color: var(--strong-lilac);
+            text-align: center;
+            margin-bottom: 1.3rem;
+        }
+
+        #hero {
+            background: linear-gradient(135deg, #ffebee 0%, #f8e1f7 100%);
+            text-align: center;
+            padding: 7rem 1rem 5rem;
+        }
+
+        .tagline {
+            font-size: 2.4rem;
+            color: var(--hot-pink);
+            font-weight: 700;
+            margin: 0.8rem 0 2.5rem;
+        }
+
+        .cta-big {
+            background: var(--hot-pink);
+            color: white;
+            font-size: 1.4rem;
+            font-weight: bold;
+            padding: 1rem 2.8rem;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s;
+            box-shadow: 0 5px 20px rgba(255,105,180,0.35);
+        }
+
+        .cta-big:hover {
+            transform: translateY(-3px) scale(1.03);
+            box-shadow: 0 8px 25px rgba(255,105,180,0.45);
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 2.2rem;
+            margin-top: 3rem;
+        }
+
+        .product-card {
+            background: white;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: all 0.28s ease;
+            position: relative;
+        }
+
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.12);
+        }
+
+        .product-card img {
+            width: 100%;
+            height: 260px;
+            object-fit: cover;
+        }
+
+        .product-info {
+            padding: 1.4rem;
+            text-align: center;
+        }
+
+        .price {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--hot-pink);
+            margin: 0.6rem 0;
+        }
+
+        .badge {
+            position: absolute;
+            top: 12px;
+            right: 12px;
+            background: var(--hot-pink);
+            color: white;
+            padding: 0.35rem 0.9rem;
+            border-radius: 30px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        .add-btn {
+            background: var(--light-pink);
+            border: none;
+            padding: 0.8rem 1.6rem;
+            border-radius: 30px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.25s;
+            margin-top: 0.8rem;
+        }
+
+        .add-btn:hover {
+            background: var(--hot-pink);
+            color: white;
+        }
+
+        .filters-bar {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.2rem;
+            justify-content: center;
+            margin-bottom: 3rem;
+        }
+
+        .search-input, .select-filter {
+            padding: 0.9rem 1.3rem;
+            border-radius: 30px;
+            border: 2px solid #eee;
+            font-size: 1rem;
+        }
+
+        #cart .cart-item {
+            background: rgba(255,182,193,0.15);
+            padding: 1.2rem;
+            border-radius: 12px;
+            margin-bottom: 1.2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        @media (max-width: 850px) {
+            nav { flex-direction: column; gap: 1.5rem; }
+            .menu { flex-direction: column; align-items: center; gap: 1.2rem; }
+            .lash-icon { width: 45px; height: 30px; }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <nav>
+        <div class="logo-container">
+            <!-- Dibujo simple de pestañas coqueto (SVG inline) -->
+            <svg class="lash-icon" viewBox="0 0 200 140" xmlns="http://www.w3.org/2000/svg">
+                <path d="M50 60 Q 70 30, 90 60" fill="none" stroke="#FF69B4" stroke-width="8" stroke-linecap="round"/>
+                <path d="M110 60 Q 130 30, 150 60" fill="none" stroke="#FF69B4" stroke-width="8" stroke-linecap="round"/>
+                <path d="M60 80 Q 80 100, 100 80" fill="none" stroke="#C8A2C8" stroke-width="6" stroke-linecap="round"/>
+                <path d="M100 80 Q 120 100, 140 80" fill="none" stroke="#C8A2C8" stroke-width="6" stroke-linecap="round"/>
+                <circle cx="90" cy="45" r="4" fill="#FFB6C1"/>
+                <circle cx="110" cy="45" r="4" fill="#FFB6C1"/>
+            </svg>
+            <div class="logo-text">LASH<span>CANDY</span></div>
+        </div>
+        <ul class="menu">
+            <li><a href="#hero">Inicio</a></li>
+            <li><a href="#catalog">Catálogo</a></li>
+            <li><a href="#cart">Carrito</a></li>
+            <li><a href="#contact">Contacto</a></li>
+        </ul>
+    </nav>
+</header>
+
+<section id="hero">
+    <h1>LASH CANDY</h1>
+    <p class="tagline">Tan Dulces Como Tu Mirada ♡</p>
+
+    <button class="cta-big" onclick="document.getElementById('catalog').scrollIntoView({behavior:'smooth'})">
+        ¡Ver todo el catálogo ahora!
+    </button>
+</section>
+
+<section id="catalog">
+    <h2>Nuestro Dulce Catálogo</h2>
+
+    <div class="filters-bar">
+        <input type="text" id="search" class="search-input" placeholder="Buscar... (ej: 0.07, D curl, 12mm)">
+        <select id="filter" class="select-filter">
+            <option value="all">Todas las gamas</option>
+            <option value="basica">Básica</option>
+            <option value="pro">Pro</option>
+            <option value="premium">Premium</option>
+        </select>
+    </div>
+
+    <div class="products-grid" id="products-grid"></div>
+</section>
+
+<section id="cart">
+    <h2>Tu Carrito Dulce</h2>
+    <div id="cart-items"></div>
+    <h3 style="text-align:center; margin:2rem 0 1rem">Total: <span id="cart-total">L. 0</span></h3>
+
+    <div style="text-align:center">
+        <button id="btn-finalizar" class="cta-big">Finalizar Pedido por WhatsApp</button>
+    </div>
+</section>
+
+<section id="contact">
+    <h2>¡Hablemos! ♡</h2>
+    <p style="text-align:center; max-width:700px; margin:0 auto 2rem">
+        ¿Dudas? ¿Quieres cotización especial? ¿Clases personalizadas?<br>
+        Escríbenos directo por WhatsApp o llena el formulario
+    </p>
+
+    <div style="text-align:center">
+        <a href="https://wa.me/+50498073555?text=Holaaa%20Lash%20Candy%20♡%20Vi%20tu%20web%20y%20me%20encantó!!%20Quisiera..." 
+           target="_blank" 
+           style="display:inline-block; background:#25D366; color:white; padding:1.1rem 2.5rem; border-radius:50px; text-decoration:none; font-weight:bold; margin:1rem;">
+           Chatear por WhatsApp ahora
+        </a>
+    </div>
+</section>
+
+<script>
+// Forzamos carrito vacío al cargar (ignora datos viejos)
+localStorage.removeItem('lashCandyCart');      // Limpia la clave anterior si existía
+localStorage.removeItem('lashCandyCartV2');    // Limpia también la nueva por si acaso
+
+let cart = [];  // Siempre inicia vacío
+
+// Productos (sin cambios, ninguno se agrega automáticamente)
+const products = [
+    {id:1,  name:"Kit Básico Completo",               price:450,  desc:"Ideal para empezar",                      image:"https://m.media-amazon.com/images/I/71+DlbRi3iL._AC_UF1000,1000_QL80_.jpg", gama:"basica"},
+    {id:2,  name:"Kit Pro 400 pestañas",               price:750,  desc:"Más cantidad + mejor calidad",           image:"http://lashtavern.com/cdn/shop/files/classic-student-kit_037574ab-f71f-435b-b6d0-625f7207b72b.jpg?v=1717449637", gama:"pro"},
+    {id:3,  name:"Kit Premium Full",                   price:1050, desc:"Lo más completo que puedes tener",         image:"https://m.media-amazon.com/images/I/71sRdfpqQVL._AC_UF1000,1000_QL80_.jpg", gama:"premium"},
+    {id:10, name:"Mix 0.07 D Curl 8-14mm",             price:380,  desc:"Clásica dramática favorita",               image:"https://cdn.shopify.com/s/files/1/0094/2397/8577/files/lash-extension-chart-for-thickness-and-length.jpg?v=1573522174", gama:"pro"},
+    {id:11, name:"Mix 0.05 C Curl 9-15mm",             price:420,  desc:"Volumen ligero hermoso",                   image:"https://jemenow.com/wp-content/uploads/2022/10/Jemenow-lash-extensions-curl-chart.jpg", gama:"premium"},
+    {id:12, name:"Mix 0.03 Mega Volume 10-16mm",       price:580,  desc:"Russian Volume top",                      image:"https://liilash.com/cdn/shop/articles/3-layer-lash-extension.jpg?v=1716024911", gama:"premium"},
+    {id:13, name:"0.07 D Curl 12mm (bandeja)",         price:190,  desc:"La longitud más vendida",                  image:"https://heymebeauty.com/wp-content/uploads/2024/12/What-Are-Individual-Lash-Extensions.webp", gama:"pro"},
+    {id:14, name:"L Curl 0.05 10-13mm",                price:260,  desc:"Perfecta para ojos encapotados",           image:"https://cdn11.bigcommerce.com/s-f041a/product_images/uploaded_images/lash-extension-charts-by-bl.jpg", gama:"premium"},
+    {id:15, name:"Pegamento Negro 5ml (largo duración)",price:180, desc:"Alta retención",                         image:"https://m.media-amazon.com/images/I/71+DlbRi3iL._AC_UF1000,1000_QL80_.jpg", gama:"pro"},
+    {id:16, name:"Pegamento Sensible 5ml",             price:210,  desc:"Para clientas sensibles",                  image:"https://m.media-amazon.com/images/I/71sRdfpqQVL._AC_UF1000,1000_QL80_.jpg", gama:"premium"},
+    {id:17, name:"Pinza Curva Premium + Pinza Recta",  price:240,  desc:"Combo de lujo",                         image:"https://heymebeauty.com/wp-content/uploads/2024/12/What-Are-Individual-Lash-Extensions.webp", gama:"premium"},
+    {id:18, name:"Mini kit prueba 100 pestañas + pegamento", price:280, desc:"Para que pruebes la calidad",     image:"https://m.media-amazon.com/images/I/71+DlbRi3iL._AC_UF1000,1000_QL80_.jpg", gama:"basica"},
+];
+
+// Render productos
+function renderProducts() {
+    const container = document.getElementById('products-grid');
+    const search = document.getElementById('search').value.toLowerCase();
+    const filter = document.getElementById('filter').value;
+
+    container.innerHTML = "";
+
+    products
+        .filter(p => {
+            const matchSearch = p.name.toLowerCase().includes(search) || p.desc.toLowerCase().includes(search);
+            const matchFilter = filter === 'all' || p.gama === filter;
+            return matchSearch && matchFilter;
+        })
+        .forEach(p => {
+            const card = document.createElement('div');
+            card.className = 'product-card';
+            card.innerHTML = `
+                <div class="badge">Disponible</div>
+                <img src="${p.image}" alt="${p.name}">
+                <div class="product-info">
+                    <h3>${p.name}</h3>
+                    <p>${p.desc}</p>
+                    <div class="price">L. ${p.price}</div>
+                    <button class="add-btn" data-id="${p.id}">+ Agregar</button>
+                </div>
+            `;
+            container.appendChild(card);
+        });
+}
+
+// Render carrito
+function renderCart() {
+    const container = document.getElementById('cart-items');
+    container.innerHTML = "";
+
+    let total = 0;
+
+    cart.forEach(item => {
+        const div = document.createElement('div');
+        div.className = 'cart-item';
+        div.innerHTML = `
+            <div>
+                <strong>${item.name}</strong><br>
+                L. ${item.price} × ${item.qty}
+            </div>
+            <div>
+                <strong>L. ${item.price * item.qty}</strong>
+                <button onclick="removeFromCart(${item.id})" style="margin-left:1.5rem;color:#c2185b;background:none;border:none;font-size:1.1rem;cursor:pointer;">×</button>
+            </div>
+        `;
+        container.appendChild(div);
+        total += item.price * item.qty;
+    });
+
+    document.getElementById('cart-total').textContent = `L. ${total}`;
+    localStorage.setItem('lashCandyCartV2', JSON.stringify(cart));
+}
+
+window.removeFromCart = function(id) {
+    cart = cart.filter(i => i.id !== id);
+    renderCart();
+};
+
+// Eventos
+document.addEventListener('DOMContentLoaded', () => {
+    renderProducts();
+    renderCart();  // Debe mostrar vacío al cargar
+
+    document.getElementById('search').addEventListener('input', renderProducts);
+    document.getElementById('filter').addEventListener('change', renderProducts);
+
+    document.getElementById('products-grid').addEventListener('click', e => {
+        if (e.target.classList.contains('add-btn')) {
+            const id = parseInt(e.target.dataset.id);
+            const product = products.find(p => p.id === id);
+
+            const already = cart.find(i => i.id === id);
+            if (already) {
+                already.qty++;
+            } else {
+                cart.push({...product, qty: 1});
+            }
+
+            renderCart();
+            alert("¡Producto añadido! ♡");
+        }
+    });
+
+    document.getElementById('btn-finalizar').addEventListener('click', () => {
+        if (cart.length === 0) {
+            alert("Tu carrito está vacío aún... ☹️");
+            return;
+        }
+
+        let message = "¡Hola Lash Candy! ♡\nMe enamoré de sus productos y quiero hacer este pedido:\n\n";
+
+        cart.forEach(i => {
+            message += `• ${i.name} × ${i.qty} → L. ${i.price * i.qty}\n`;
+        });
+
+        message += `\nTotal: L. ${cart.reduce((sum,i)=>sum+i.price*i.qty,0)}\n\n¿Me confirmas disponibilidad y me dices los próximos pasos porfi? ♡`;
+
+        const url = `https://wa.me/+50498073555?text=${encodeURIComponent(message)}`;
+        window.open(url, '_blank');
+    });
+});
+</script>
+</body>
+</html>
