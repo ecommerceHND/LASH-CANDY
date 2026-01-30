@@ -82,7 +82,7 @@
             padding: 4.5rem 1.5rem;
         }
 
-        h1, h2 {
+        h1, h2, h3 {
             color: var(--strong-lilac);
             text-align: center;
             margin-bottom: 1.3rem;
@@ -211,10 +211,51 @@
             align-items: center;
         }
 
+        #guide .step {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+
+        #guide .step img {
+            width: 300px;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+        }
+
+        #guide table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 2rem 0;
+        }
+
+        #guide th, #guide td {
+            border: 1px solid var(--lilac);
+            padding: 1rem;
+            text-align: center;
+        }
+
+        #guide th {
+            background: var(--light-pink);
+        }
+
+        #guide .faq {
+            margin-bottom: 1rem;
+        }
+
+        #guide .faq h4 {
+            margin-bottom: 0.5rem;
+            color: var(--strong-lilac);
+        }
+
         @media (max-width: 850px) {
             nav { flex-direction: column; gap: 1.5rem; }
             .menu { flex-direction: column; align-items: center; gap: 1.2rem; }
             .lash-icon { width: 45px; height: 30px; }
+            #guide .step { flex-direction: column; text-align: center; }
         }
     </style>
 </head>
@@ -236,7 +277,9 @@
         </div>
         <ul class="menu">
             <li><a href="#hero">Inicio</a></li>
+            <li><a href="#history">Historia</a></li>
             <li><a href="#catalog">Catálogo</a></li>
+            <li><a href="#guide">Guía y Consultas</a></li>
             <li><a href="#cart">Carrito</a></li>
             <li><a href="#contact">Contacto</a></li>
         </ul>
@@ -250,6 +293,11 @@
     <button class="cta-big" onclick="document.getElementById('catalog').scrollIntoView({behavior:'smooth'})">
         ¡Ver todo el catálogo ahora!
     </button>
+</section>
+
+<section id="history">
+    <h2>Historia de LASH CANDY</h2>
+    <p>LASH CANDY fue creada por Catherin Mendoza en 2020, con la pasión por realzar la belleza natural de las mujeres a través de extensiones de pestañas de alta calidad. Inspirada en su propia experiencia en el mundo de la belleza, Catherin decidió lanzar kits accesibles y profesionales para que todas puedan lograr una mirada dulce y atrevida desde casa. Hoy, LASH CANDY es sinónimo de calidad, innovación y envíos nacionales en Honduras.</p>
 </section>
 
 <section id="catalog">
@@ -266,6 +314,114 @@
     </div>
 
     <div class="products-grid" id="products-grid"></div>
+</section>
+
+<section id="guide">
+    <h2>Guía LASH CANDY y Consultas</h2>
+
+    <h3>Fichas de Producto</h3>
+    <p>Aquí encontrarás detalles claros sobre nuestros productos, con fotos de alta calidad y explicaciones detalladas.</p>
+
+    <h3>Diferencias entre Gamas</h3>
+    <table>
+        <thead>
+            <tr>
+                <th>Gama</th>
+                <th>Material</th>
+                <th>Duración</th>
+                <th>Dificultad de Aplicación</th>
+                <th>Precio</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Básica</td>
+                <td>Sintético básico</td>
+                <td>1-2 semanas</td>
+                <td>Fácil</td>
+                <td>L. 450</td>
+            </tr>
+            <tr>
+                <td>Pro</td>
+                <td>Seda sintética</td>
+                <td>2-3 semanas</td>
+                <td>Intermedio</td>
+                <td>L. 750</td>
+            </tr>
+            <tr>
+                <td>Premium</td>
+                <td>Mink sintético premium</td>
+                <td>3-4 semanas</td>
+                <td>Avanzado</td>
+                <td>L. 1,050</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h3>Recomendaciones según Nivel</h3>
+    <ul>
+        <li><strong>Principiante:</strong> Elige la Gama Básica para practicar sin complicaciones.</li>
+        <li><strong>Intermedio:</strong> Opta por la Gama Pro para resultados más duraderos.</li>
+        <li><strong>Profesional:</strong> La Gama Premium es ideal para looks impecables y clientes exigentes.</li>
+    </ul>
+
+    <h3>Guía Paso a Paso</h3>
+    <ol>
+        <li class="step">
+            <div>
+                <h4>Paso 1: Preparación</h4>
+                <p>Limpia las pestañas naturales con un limpiador suave.</p>
+            </div>
+            <img src="https://www.perfecteyelashesproducts.co.uk/blog/wp-content/uploads/2018/06/How-to-Apply-Eyelash-Extensions-in-8-Simple-Steps.png" alt="Paso 1">
+        </li>
+        <li class="step">
+            <div>
+                <h4>Paso 2: Aislar</h4>
+                <p>Usa parches para proteger la piel y aislar las pestañas inferiores.</p>
+            </div>
+            <img src="https://www.shutterstock.com/shutterstock/photos/1680856378/display_1500/stock-vector-how-to-apply-false-eyelashes-step-by-step-properly-full-tutorial-on-application-guide-1680856378.jpg" alt="Paso 2">
+        </li>
+        <li class="step">
+            <div>
+                <h4>Paso 3: Aplicar Pegamento</h4>
+                <p>Aplica pegamento en la base de la extensión.</p>
+            </div>
+            <img src="https://www.gladgirl.com/cdn/shop/articles/Good_Morning_Sunrise_Photo_Social_Graphic_Blog_Banner_1600x.png?v=1726858916" alt="Paso 3">
+        </li>
+        <li class="step">
+            <div>
+                <h4>Paso 4: Colocar Extensión</h4>
+                <p>Une la extensión a la pestaña natural con pinzas.</p>
+            </div>
+            <img src="https://vinlash.com/wp-content/uploads/2024/11/The-right-application-methods-smart-use-of-products-and-steering-clear-of-common-slip-ups-are-key-to-your-success.png" alt="Paso 4">
+        </li>
+        <li class="step">
+            <div>
+                <h4>Paso 5: Repetir y Finalizar</h4>
+                <p>Repite hasta cubrir todas las pestañas y aplica sellador.</p>
+            </div>
+            <img src="http://thousandlashes.biz/cdn/shop/articles/How_To_Apply_Eyelash_Extensions_Step_By_Step_da47c488-bf0a-4c39-bfbc-4211b74a2f53_1200x630.jpg?v=1708050228" alt="Paso 5">
+        </li>
+    </ol>
+
+    <h3>Preguntas Frecuentes</h3>
+    <div class="faq">
+        <h4>¿Cuánto duran las extensiones?</h4>
+        <p>Dependiendo de la gama, de 1 a 4 semanas con cuidados adecuados.</p>
+    </div>
+    <div class="faq">
+        <h4>¿Son reutilizables?</h4>
+        <p>No, las extensiones son de un solo uso para mantener la higiene.</p>
+    </div>
+    <div class="faq">
+        <h4>¿Cómo retirar el adhesivo?</h4>
+        <p>Usa un removedor especializado o consulta a un profesional.</p>
+    </div>
+
+    <h3>Chat para Resolver Dudas</h3>
+    <a href="https://wa.me/+50498073555?text=Hola%20Lash%20Candy%20♡%20Tengo%20una%20duda%20sobre..." 
+       target="_blank" 
+       class="cta-big">Chatea con nosotros ahora</a>
 </section>
 
 <section id="cart">
@@ -295,26 +451,26 @@
 </section>
 
 <script>
-// Forzamos carrito vacío al cargar (ignora datos viejos)
-localStorage.removeItem('lashCandyCart');      // Limpia la clave anterior si existía
-localStorage.removeItem('lashCandyCartV2');    // Limpia también la nueva por si acaso
+// Forzamos carrito vacío al cargar
+localStorage.removeItem('lashCandyCart');
+localStorage.removeItem('lashCandyCartV2');
 
-let cart = [];  // Siempre inicia vacío
+let cart = [];
 
-// Productos (sin cambios, ninguno se agrega automáticamente)
+// Productos
 const products = [
-    {id:1,  name:"Kit Básico Completo",               price:450,  desc:"Ideal para empezar",                      image:"https://m.media-amazon.com/images/I/71+DlbRi3iL._AC_UF1000,1000_QL80_.jpg", gama:"basica"},
-    {id:2,  name:"Kit Pro 400 pestañas",               price:750,  desc:"Más cantidad + mejor calidad",           image:"http://lashtavern.com/cdn/shop/files/classic-student-kit_037574ab-f71f-435b-b6d0-625f7207b72b.jpg?v=1717449637", gama:"pro"},
-    {id:3,  name:"Kit Premium Full",                   price:1050, desc:"Lo más completo que puedes tener",         image:"https://m.media-amazon.com/images/I/71sRdfpqQVL._AC_UF1000,1000_QL80_.jpg", gama:"premium"},
-    {id:10, name:"Mix 0.07 D Curl 8-14mm",             price:380,  desc:"Clásica dramática favorita",               image:"https://cdn.shopify.com/s/files/1/0094/2397/8577/files/lash-extension-chart-for-thickness-and-length.jpg?v=1573522174", gama:"pro"},
-    {id:11, name:"Mix 0.05 C Curl 9-15mm",             price:420,  desc:"Volumen ligero hermoso",                   image:"https://jemenow.com/wp-content/uploads/2022/10/Jemenow-lash-extensions-curl-chart.jpg", gama:"premium"},
-    {id:12, name:"Mix 0.03 Mega Volume 10-16mm",       price:580,  desc:"Russian Volume top",                      image:"https://liilash.com/cdn/shop/articles/3-layer-lash-extension.jpg?v=1716024911", gama:"premium"},
-    {id:13, name:"0.07 D Curl 12mm (bandeja)",         price:190,  desc:"La longitud más vendida",                  image:"https://heymebeauty.com/wp-content/uploads/2024/12/What-Are-Individual-Lash-Extensions.webp", gama:"pro"},
-    {id:14, name:"L Curl 0.05 10-13mm",                price:260,  desc:"Perfecta para ojos encapotados",           image:"https://cdn11.bigcommerce.com/s-f041a/product_images/uploaded_images/lash-extension-charts-by-bl.jpg", gama:"premium"},
-    {id:15, name:"Pegamento Negro 5ml (largo duración)",price:180, desc:"Alta retención",                         image:"https://m.media-amazon.com/images/I/71+DlbRi3iL._AC_UF1000,1000_QL80_.jpg", gama:"pro"},
-    {id:16, name:"Pegamento Sensible 5ml",             price:210,  desc:"Para clientas sensibles",                  image:"https://m.media-amazon.com/images/I/71sRdfpqQVL._AC_UF1000,1000_QL80_.jpg", gama:"premium"},
-    {id:17, name:"Pinza Curva Premium + Pinza Recta",  price:240,  desc:"Combo de lujo",                         image:"https://heymebeauty.com/wp-content/uploads/2024/12/What-Are-Individual-Lash-Extensions.webp", gama:"premium"},
-    {id:18, name:"Mini kit prueba 100 pestañas + pegamento", price:280, desc:"Para que pruebes la calidad",     image:"https://m.media-amazon.com/images/I/71+DlbRi3iL._AC_UF1000,1000_QL80_.jpg", gama:"basica"},
+    {id:1,  name:"Kit Básico Completo",               price:450,  desc:"Ideal para empezar, incluye bandejas, pegamento, pinzas y sellador.", image:"https://i.ebayimg.com/images/g/43IAAOSwrvRbXF2y/s-l1200.jpg", gama:"basica"},
+    {id:2,  name:"Kit Pro 400 pestañas",               price:750,  desc:"Más cantidad + mejor calidad, con accesorios avanzados.",           image:"https://lashjungle.com/cdn/shop/files/lash_extensions_kits_and_bundles_2.png?v=1768363765&width=3840", gama:"pro"},
+    {id:3,  name:"Kit Premium Full",                   price:1050, desc:"Lo más completo, con materiales premium y herramientas de lujo.",         image:"http://lashtavern.com/cdn/shop/files/classic-student-kit_037574ab-f71f-435b-b6d0-625f7207b72b.jpg?v=1717449637", gama:"premium"},
+    {id:10, name:"Mix 0.07 D Curl 8-14mm",             price:380,  desc:"Clásica dramática favorita.",               image:"https://www.lashstuff.com/product_images/uploaded_images/graphic-of-eyelash-extension-supplies-2.jpg", gama:"pro"},
+    {id:11, name:"Mix 0.05 C Curl 9-15mm",             price:420,  desc:"Volumen ligero hermoso.",                   image:"https://cdn.shopify.com/s/files/1/0377/4060/9672/files/Essential_Student_Kit_for_eyelash_extensions.jpg?v=1687841666", gama:"premium"},
+    {id:12, name:"Mix 0.03 Mega Volume 10-16mm",       price:580,  desc:"Russian Volume top.",                      image:"https://www.gosupps.com/media/catalog/product/cache/25/image/1500x/040ec09b1e35df139433887a97daa66f/8/1/81Up8uTUuML._SL1500_.jpg", gama:"premium"},
+    {id:13, name:"0.07 D Curl 12mm (bandeja)",         price:190,  desc:"La longitud más vendida.",                  image:"https://www.perfecteyelashesproducts.co.uk/blog/wp-content/uploads/2018/06/How-to-Apply-Eyelash-Extensions-in-8-Simple-Steps.png", gama:"pro"},
+    {id:14, name:"L Curl 0.05 10-13mm",                price:260,  desc:"Perfecta para ojos encapotados.",           image:"https://www.shutterstock.com/shutterstock/photos/1680856378/display_1500/stock-vector-how-to-apply-false-eyelashes-step-by-step-properly-full-tutorial-on-application-guide-1680856378.jpg", gama:"premium"},
+    {id:15, name:"Pegamento Negro 5ml (largo duración)",price:180, desc:"Alta retención.",                         image:"https://www.gladgirl.com/cdn/shop/articles/Good_Morning_Sunrise_Photo_Social_Graphic_Blog_Banner_1600x.png?v=1726858916", gama:"pro"},
+    {id:16, name:"Pegamento Sensible 5ml",             price:210,  desc:"Para clientas sensibles.",                  image:"https://vinlash.com/wp-content/uploads/2024/11/The-right-application-methods-smart-use-of-products-and-steering-clear-of-common-slip-ups-are-key-to-your-success.png", gama:"premium"},
+    {id:17, name:"Pinza Curva Premium + Pinza Recta",  price:240,  desc:"Combo de lujo.",                         image:"http://thousandlashes.biz/cdn/shop/articles/How_To_Apply_Eyelash_Extensions_Step_By_Step_da47c488-bf0a-4c39-bfbc-4211b74a2f53_1200x630.jpg?v=1708050228", gama:"premium"},
+    {id:18, name:"Mini kit prueba 100 pestañas + pegamento", price:280, desc:"Para que pruebes la calidad.",     image:"https://i.pinimg.com/736x/eb/73/38/eb733819eaa9a72db7d781c820da3855.jpg", gama:"basica"},
 ];
 
 // Render productos
@@ -384,7 +540,7 @@ window.removeFromCart = function(id) {
 // Eventos
 document.addEventListener('DOMContentLoaded', () => {
     renderProducts();
-    renderCart();  // Debe mostrar vacío al cargar
+    renderCart();
 
     document.getElementById('search').addEventListener('input', renderProducts);
     document.getElementById('filter').addEventListener('change', renderProducts);
